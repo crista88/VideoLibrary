@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+
+from decouple import config
+
 # from allauth.account.middleware import AccountMiddleware
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -108,7 +111,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Stripe keys
-STRIPE_SECRET_KEY = 'sk_test_51M5sefDKG0ESVbWvnDQdOGGcxo108PrQhkQFOIzopibll8mUAzdH8fx3L4TLR3pnPSHxvivthwibcMJVDhgUAD5T00jrjUNL4V'
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
 STRIPE_PUBLISHABLE_KEY = 'pk_test_51M5sefDKG0ESVbWviW8oue4INsMdnhc2vI4jXiE0DEm4jkpJHg37p8AJzhkaSim6mzJZUj5jL4uG51KAHxUYPFvs00GclviVpG'
 
 # URLs
